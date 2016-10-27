@@ -62,7 +62,7 @@ function compareNumber(a, b) {
 // console.log(people.sort());
 // console.log(people.sort(compareNumber));
 
-var arr = [[1, 3, 4], [3, 6], [2, 4, 6, 8]];
+var arr = [[1, 3, 4], [3, 6], [2, 4, 6, 8], [1, 2]];
 
 function sumArray(arr) {
   var combine = function(a, b) {
@@ -70,7 +70,7 @@ function sumArray(arr) {
   };
   return arr.reduce(combine, 0);
 }
-
+//this don't work!
 // console.log(arr.sort(sumArray));
 
 function hello() {
@@ -100,15 +100,12 @@ function sum(array) {
   }, 0);
 }
 
-console.log(sum([3, 5, 8]));
+// console.log(sum([3, 5, 8]));
 
 var input = ['fudged', 'up', 'beyond', 'all', 'recognition'];
 
-function accronym(array) {
-  var joined = [];
-  joined = array.slice(0, 1);
-}
+var accronym = input.reduce(function(currentValue, word) {
+  return currentValue + word.slice(0, 1).toUpperCase();
+}, '');
 
-var output = input.forEach(accronym);
-
-console.log(output);
+// console.log(accronym);
